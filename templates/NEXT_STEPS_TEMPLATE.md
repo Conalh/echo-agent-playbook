@@ -1,13 +1,18 @@
-# NEXT_STEPS.md - [PROJECT_NAME]
+# NEXT_STEPS.md — [PROJECT_NAME]
 
-Clean pickup point for the next session.
+Clean pickup point for the next work session.
 
-## Where Work Stopped
+---
+
+## Where We Left Off
 
 - [current stable truth]
 - [current stable truth]
+- [current stable truth]
 
-## Immediate Task
+---
+
+## Immediate Recommended Task
 
 ```text
 [TASK]
@@ -16,37 +21,45 @@ Clean pickup point for the next session.
 Goal:
 
 ```text
-[what this should accomplish]
+[what this task should accomplish]
 ```
 
-Success:
+Success means:
 
-- [criterion]
-- [criterion]
-- [criterion]
+- [success criterion]
+- [success criterion]
+- [success criterion]
 
-## Checklist
+---
+
+## Focus Checklist
 
 - [ ] [check]
 - [ ] [check]
 - [ ] [check]
+
+---
 
 ## Do Not Touch
 
-- [system/file]
-- [system/file]
+- [system]
+- [system]
+- [system]
+
+---
 
 ## Suggested Prompt
 
 ```text
-[Agent], [perform task].
+[Agent name], [perform task].
 
 Goal:
 [goal]
 
 Focus:
-- [focus]
-- [focus]
+- [focus item]
+- [focus item]
+- [focus item]
 
 Rules:
 - Do not add unrelated features.
@@ -54,15 +67,20 @@ Rules:
 - Report failures first.
 
 Verify:
-- [check]
-- [check]
+- [verification step]
+- [verification step]
 ```
 
-## Later
+---
+
+## Medium Priorities
 
 - [priority]
 - [priority]
+- [priority]
+
+---
 
 ## Notes
 
-[context the next agent needs]
+[Any context the next agent should know.]

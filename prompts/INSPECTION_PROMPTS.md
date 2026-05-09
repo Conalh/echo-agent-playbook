@@ -1,6 +1,8 @@
 # Inspection Prompts
 
-Use these when the user wants a report, not implementation.
+Use these when you want a report, not implementation.
+
+---
 
 ## Codebase Inspection
 
@@ -8,20 +10,23 @@ Use these when the user wants a report, not implementation.
 Inspect the codebase for [TOPIC].
 
 Goal:
-Understand current implementation before changes.
+Understand the current implementation before making changes.
 
 Focus:
-- where behavior lives
-- what owns state
-- extension points
+- where the behavior is implemented
+- what owns the state
+- likely extension points
 - risks
-- files likely to change
+- files that would probably need changes
 
 Rules:
-- Do not edit.
-- Separate confirmed facts from assumptions.
+- Do not edit files.
+- Do not implement anything.
 - Report findings only.
+- Separate confirmed facts from assumptions.
 ```
+
+---
 
 ## Documentation Inspection
 
@@ -31,15 +36,17 @@ Inspect the documentation for consistency.
 Focus:
 - source-of-truth conflicts
 - stale implementation claims
-- planned work described as implemented
+- planned features described as implemented
 - missing current-state notes
-- missing handoff
+- missing next-step handoff
 
 Rules:
-- Do not edit.
-- Reference specific files or sections.
+- Do not edit yet.
+- Quote or reference specific files/sections.
 - Recommend exact cleanup steps.
 ```
+
+---
 
 ## Architecture Risk Inspection
 
@@ -52,13 +59,15 @@ Focus:
 - duplicate logic
 - hidden dependencies
 - unclear naming
-- risky extension points
+- high-risk extension points
 
 Rules:
 - Do not refactor.
-- Do not propose a rewrite unless necessary.
-- Prefer the smallest safe improvement.
+- Do not propose a full rewrite unless absolutely necessary.
+- Prefer smallest safe improvements.
 ```
+
+---
 
 ## Readability Inspection
 
@@ -66,7 +75,7 @@ Rules:
 Inspect [FEATURE/UI/SYSTEM] for readability.
 
 Goal:
-Find what would confuse a user or maintainer.
+Identify what would confuse a user or future maintainer.
 
 Focus:
 - unclear labels
@@ -79,5 +88,5 @@ Focus:
 Rules:
 - Report failures first.
 - Separate must-fix from nice-to-have.
-- Do not implement changes.
+- Do not implement changes yet.
 ```

@@ -1,49 +1,71 @@
-# CODY.md - Repo Bootstrap and Coding Assistant
+# CODY.md — Repo Bootstrap and Coding Assistant
 
-Use this profile for repo setup, inspection, and small edits.
+This file is a reusable instruction profile for using Cody or a similar coding assistant to bootstrap, inspect, or edit a repository.
 
-## Best Uses
+---
 
-- create initial file structure
-- draft starter docs
-- inspect repo layout
-- make small implementation changes
-- add focused tests around known behavior
-- run approved refactors
+## Best Use Cases
 
-Do not use Cody to decide what the project should become.
+Use Cody for:
 
-## Empty Repo Rules
+- creating initial file structure
+- drafting README and docs
+- inspecting existing repo layout
+- making small implementation changes
+- adding tests around known behavior
+- running focused refactors after approval
 
-1. Create only requested files.
+Do not use Cody as a substitute for deciding what the project should be.
+
+---
+
+## Empty Repo Bootstrap Rules
+
+When bootstrapping an empty repo:
+
+1. Create only the requested structure.
 2. Add a short README.
-3. Use `.gitkeep` only when empty folders must be tracked.
-4. Do not infer a tech stack from the repo name.
-5. Do not add dependencies.
-6. Do not add placeholder code unless requested.
+3. Add folders with `.gitkeep` only if empty folders must be committed.
+4. Do not add build systems unless requested.
+5. Do not infer a tech stack from the repo name alone.
+6. Do not add dependencies.
+7. Do not generate placeholder code unless requested.
 
-## Edit Rules
+---
 
-Before editing, name:
+## Editing Rules
+
+Before editing, Cody should identify:
 
 - files that will change
 - files that will not change
 - assumptions
 - verification plan
 
-During editing:
+During editing, Cody should:
 
 - keep changes narrow
 - match existing style
-- preserve docs unless asked to rewrite
+- preserve existing docs unless asked to rewrite them
 - avoid broad cleanup
 
-After editing, report changed files, checks run, checks skipped, and the next useful step.
+After editing, Cody should report:
 
-## Bootstrap Prompt
+- changed files
+- summary by file
+- checks run
+- checks not run
+- recommended next step
+
+---
+
+## Good Bootstrap Prompt
 
 ```text
 Cody, bootstrap this repository as a project-agnostic AI-agent playbook.
+
+Goal:
+Create a clean markdown documentation structure for reusable agent instructions, coding standards, prompt templates, and project setup templates.
 
 Create:
 - README.md
@@ -57,22 +79,26 @@ Create:
 Rules:
 - Do not add source code.
 - Do not add dependencies.
-- Do not add project-specific content.
-- Keep docs concise.
+- Do not add project-specific lore or mechanics.
+- Keep all docs generic and reusable.
+- Use concise markdown.
 
 Verify:
 - list final tree
 - confirm no source-code files were created
+- confirm no project-specific content was added
 ```
 
-## Inspection Prompt
+---
+
+## Good Inspection Prompt
 
 ```text
-Cody, inspect this repo for project-agnostic quality.
+Cody, inspect this repo and report whether the docs are still project-agnostic.
 
 Focus:
 - project-specific references
-- narrow rules
+- overly narrow rules
 - duplicate docs
 - missing README links
 - stale archive files
