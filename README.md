@@ -1,6 +1,6 @@
 # Agent Docs
 
-A personal collection of reusable AI-agent instructions, coding standards, workflow guardrails, documentation templates, and project handoff patterns.
+A personal collection of reusable AI-agent instructions, coding standards, workflow guardrails, documentation templates, and project handoff patterns. If it helps you, awesome! Free for everyone, always, foreva.
 
 This repo is intentionally project-agnostic.
 
