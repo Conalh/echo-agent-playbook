@@ -53,7 +53,7 @@ A smoke test checks the core loop without trying to test every edge case.
 # Smoke Test — [DATE / FEATURE]
 
 Goal:
-Verify the current implemented loop before adding new mechanics.
+Verify the current implemented loop before adding new behavior.
 
 Focus:
 - app launches cleanly
@@ -76,7 +76,7 @@ Do not add new features during this pass.
 Run a live regression/smoke test after the recent [FEATURE/SYSTEM] changes.
 
 Goal:
-Verify the implemented loop before adding mechanics.
+Verify the implemented loop before adding new behavior.
 
 Focus:
 - [critical path]
@@ -87,7 +87,7 @@ Focus:
 - [no math/data regression]
 
 Report failures first.
-Do not add mechanics.
+Do not add features.
 ```
 
 ---

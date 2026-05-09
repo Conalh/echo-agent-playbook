@@ -80,15 +80,15 @@ Example:
 
 ```text
 Goal:
-Add a one-time reward panel after a completed route node.
+Add confirmation before deleting an item.
 
 Success:
-The panel appears once, grants the selected reward, cannot be claimed twice, and does not affect unrelated route nodes.
+The confirmation appears once, cancel leaves data unchanged, confirm deletes once, and unrelated actions still work.
 
 Plan:
-1. Add reward state -> verify node can be marked claimed.
-2. Show panel from route completion -> verify it appears after success.
-3. Add claim guard -> verify repeated visits do not duplicate rewards.
+1. Add confirmation state -> verify the prompt opens.
+2. Add confirm/cancel behavior -> verify both paths.
+3. Add duplicate-action guard -> verify repeated clicks do not duplicate the result.
 ```
 
 ---
@@ -127,7 +127,7 @@ Parent systems coordinate children.
 
 ## 7. Do Not Hide Mechanics in Presentation
 
-Presentation code should not secretly own gameplay rules.
+Presentation code should not secretly own business rules.
 
 If visual behavior affects logic, it should be explicit and documented.
 
@@ -149,9 +149,9 @@ Example:
 
 ```text
 Not changed:
-- Did not alter scoring math.
-- Did not add new reward types.
-- Did not refactor the route graph.
+- Did not alter authorization rules.
+- Did not change the data model.
+- Did not refactor adjacent screens.
 ```
 
 This prevents false assumptions and keeps future work cleaner.

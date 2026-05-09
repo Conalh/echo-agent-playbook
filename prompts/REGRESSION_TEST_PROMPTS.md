@@ -66,7 +66,7 @@ Focus:
 - input is not blocked accidentally
 - important text is readable
 - overlays layer correctly
-- settings/pause/confirm dialogs still appear above gameplay UI
+- settings/pause/confirm dialogs still appear above the primary UI
 - no major layout overlap at common window sizes
 
 Do not redesign the UI during this test.

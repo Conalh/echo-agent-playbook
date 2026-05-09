@@ -35,13 +35,13 @@ Constraints:
 
 ---
 
-## Game Asset Prompt Pattern
+## Visual Asset Prompt Pattern
 
 ```text
-Generate one game-ready concept image for [ASSET].
+Generate one concept image for [ASSET].
 
 Purpose:
-[card art / character portrait / environment concept / item icon / UI background]
+[illustration / portrait / environment concept / item icon / UI background]
 
 Visual identity:
 [themes, motifs, materials]

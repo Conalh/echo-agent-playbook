@@ -79,9 +79,9 @@ Handoff docs are most useful when they are specific.
 
 Design docs should separate:
 
-- emotional target
-- player-facing behavior
-- mechanical rules
+- design intent
+- user-facing behavior
+- system rules
 - implementation status
 - future ideas
 

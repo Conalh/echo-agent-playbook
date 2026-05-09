@@ -33,19 +33,19 @@ Unknown          Status needs verification.
 ## Good Example
 
 ```md
-## Reward Panel
+## CSV Export
 
 Status: Partial.
 
 Implemented:
-- Opens after one route node.
-- Lets the player choose one of three rewards.
-- Prevents duplicate claims.
+- Exports the current table.
+- Preserves active filters.
+- Downloads a CSV file.
 
 Deferred:
-- Reward rarity weighting.
-- Reward history UI.
-- Procedural reward placement.
+- Scheduled exports.
+- Custom column presets.
+- Export history.
 ```
 
 ---
@@ -53,12 +53,12 @@ Deferred:
 ## Bad Example
 
 ```md
-## Reward Panel
+## CSV Export
 
-The reward system gives players route rewards, weighted by rarity, with special event variants and reward history.
+The export system supports scheduled exports, custom columns, history, and filtered downloads.
 ```
 
-If only one test reward exists, this is misleading.
+If only filtered downloads exist, this is misleading.
 
 ---
 

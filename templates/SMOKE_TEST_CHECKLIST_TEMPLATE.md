@@ -49,7 +49,7 @@ Verify the current implemented loop before adding new features.
 - [ ] No obvious UI overlap.
 - [ ] No obvious input blocking.
 - [ ] No obvious math/data regression.
-- [ ] No repeated claim/duplicate reward bug if relevant.
+- [ ] No repeated action/duplicate result bug if relevant.
 
 ---
 

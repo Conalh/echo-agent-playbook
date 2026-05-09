@@ -54,7 +54,7 @@ Examples:
 
 ```text
 main
-feature/reward-panel
+feature/import-validation
 fix/save-load-crash
 docs/agent-playbook
 ```
