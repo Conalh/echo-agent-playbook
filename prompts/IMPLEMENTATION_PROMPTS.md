@@ -1,25 +1,27 @@
 # Implementation Prompts
 
-Prompts for focused coding work.
+Reusable prompts for focused coding work.
 
-## Small Feature
+---
+
+## Small Feature Implementation
 
 ```text
 Implement [FEATURE_NAME].
 
 Goal:
-[desired behavior]
+[One-sentence description of the desired behavior.]
 
 Scope:
-- [file/system]
-- [file/system]
+- [file/system likely involved]
+- [file/system likely involved]
 
 Rules:
 - Keep the change minimal.
 - Do not refactor unrelated code.
 - Match existing naming and style.
-- Add architecture only if required.
-- Update docs/changelog only for notable changes.
+- Do not add new architecture unless required.
+- Update docs/changelog only if this is a notable change.
 
 Verify:
 - [specific check]
@@ -27,20 +29,23 @@ Verify:
 
 Report:
 - files changed
+- what changed
 - checks run
 - what was intentionally not changed
 ```
+
+---
 
 ## Bug Fix
 
 ```text
 Fix [BUG_DESCRIPTION].
 
-Observed:
-[current behavior]
+Observed behavior:
+[What currently happens.]
 
-Expected:
-[desired behavior]
+Expected behavior:
+[What should happen.]
 
 Reproduction:
 1. [step]
@@ -50,28 +55,30 @@ Reproduction:
 Rules:
 - Find the smallest fix.
 - Do not rewrite adjacent systems.
-- Add a focused test if the project has tests.
+- Add or update a focused test if the project has tests.
 - Do not hide failed verification.
 
 Verify:
-- reproduce the bug if possible
-- confirm the path now passes
+- reproduce the bug before the fix if possible
+- confirm the reproduction path now passes
 - check likely adjacent regression
 ```
 
-## UI Behavior
+---
+
+## UI Behavior Change
 
 ```text
 Implement this UI behavior change: [CHANGE].
 
 Goal:
-[user-visible result]
+[What should be true from the user's perspective.]
 
 Rules:
 - Do not change unrelated layout.
-- Do not rename components unless required.
-- Keep core state in the parent/system layer.
-- UI displays state and emits intent.
+- Do not rename existing nodes/components unless required.
+- Keep data ownership in the parent/system layer.
+- UI should display state and emit intent, not secretly own core logic.
 
 Verify:
 - [manual UI check]
@@ -79,18 +86,20 @@ Verify:
 - [regression check]
 ```
 
-## Add Document
+---
+
+## Add a New Document
 
 ```text
-Create [FILE_NAME].
+Create a new markdown document: [FILE_NAME].
 
 Purpose:
-[what this document helps with]
+[What this document should help with.]
 
 Rules:
 - Keep it project-agnostic unless told otherwise.
 - Use clear headings.
-- Include examples only if useful.
+- Include copy-paste examples if useful.
 - Do not duplicate existing docs.
 
 Verify:

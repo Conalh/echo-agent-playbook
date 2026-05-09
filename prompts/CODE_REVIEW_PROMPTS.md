@@ -1,6 +1,8 @@
 # Code Review Prompts
 
-Prompts for reviewing changes without rewriting them.
+Prompts for reviewing code changes with an AI assistant.
+
+---
 
 ## Focused Diff Review
 
@@ -17,9 +19,11 @@ Focus:
 
 Rules:
 - Do not rewrite the patch.
-- Prioritize by severity.
+- Prioritize issues by severity.
 - Ignore style preferences unless they affect maintainability.
 ```
+
+---
 
 ## Pre-Merge Review
 
@@ -28,10 +32,10 @@ Review the current branch before merge.
 
 Focus:
 - changed files are expected
-- requested behavior works
+- feature works as requested
 - no unrelated refactors slipped in
-- checks were run
-- docs/changelog match the change
+- tests/checks were run
+- docs/changelog are updated if needed
 - no secrets or generated junk are included
 
 Report:
@@ -41,6 +45,8 @@ Report:
 - suggested commit message
 ```
 
+---
+
 ## Safety Review
 
 ```text
@@ -48,6 +54,7 @@ Review this change for safety risks.
 
 Focus:
 - data loss
+- save/load changes
 - migrations
 - file deletion
 - destructive commands
@@ -57,8 +64,10 @@ Focus:
 Rules:
 - Report blockers first.
 - Be conservative.
-- Recommend isolation or rollback when needed.
+- Recommend rollback or isolation if needed.
 ```
+
+---
 
 ## Documentation Review
 
@@ -70,7 +79,7 @@ Focus:
 - stale claims
 - unclear source of truth
 - missing next steps
-- project-specific content in generic docs
+- project-specific content inside generic docs
 
 Rules:
 - Give exact suggested edits.

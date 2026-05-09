@@ -1,61 +1,81 @@
-# PROJECT_MEMORY.md - [PROJECT_NAME]
+# PROJECT_MEMORY.md — [PROJECT_NAME]
 
-Current-state handoff for future agents.
+Compact current-state memory for future agents.
 
 For canonical design rules, read `[SOURCE_OF_TRUTH_DOC]` first.
 
-## Current State
+---
+
+## Current Project State
 
 [Describe the current working loop, app state, or project maturity.]
 
-Flow:
+Current flow:
 
 ```text
 [start] -> [step] -> [step] -> [end]
 ```
 
-## Implemented
+---
+
+## Implemented Systems
 
 - [implemented system]
 - [implemented system]
 - [implemented system]
+
+---
 
 ## Recent Changes
 
 - [recent change]
 - [recent change]
+- [recent change]
 
-## Risks
+---
+
+## Current Risks
 
 - [risk]
 - [risk]
+- [risk]
+
+---
 
 ## Deferred / Planned
 
-- [idea]
-- [idea]
+These ideas are preserved but not implemented yet:
+
+- [deferred idea]
+- [planned idea]
+- [future system]
+
+---
 
 ## Do Not Touch Yet
 
 - [system/file/feature]
 - [system/file/feature]
+- [system/file/feature]
 
-## Next Pickup
+---
 
-Task:
+## Next Clean Pickup
+
+Recommended next task:
 
 ```text
 [clear next task]
 ```
 
-Reason:
+Why:
 
 ```text
-[why this is safest or most useful]
+[reason this is the safest or most useful next step]
 ```
 
-Prompt:
+Suggested prompt:
 
 ```text
-[copy-paste prompt]
+[copy-paste prompt for the next coding agent]
 ```

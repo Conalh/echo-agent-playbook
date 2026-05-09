@@ -1,6 +1,8 @@
 # Documentation Prompts
 
-Prompts for writing and syncing project docs.
+Reusable prompts for writing and maintaining project docs.
+
+---
 
 ## Create Project Memory
 
@@ -8,23 +10,25 @@ Prompts for writing and syncing project docs.
 Create or update PROJECT_MEMORY.md.
 
 Goal:
-Provide a compact current-state handoff.
+Provide a compact current-state handoff for future agents.
 
 Include:
-- current project state
+- current project loop/state
 - implemented systems
 - recent changes
-- risks
+- risky areas
 - deferred ideas
 - do-not-touch list
 - next clean pickup
 
 Rules:
-- Do not invent details.
-- Mark unknowns.
+- Do not invent implementation details.
+- Mark unknowns as unknown.
 - Separate implemented from planned.
 - Keep it useful for an implementation agent.
 ```
+
+---
 
 ## Create Next Steps
 
@@ -32,20 +36,22 @@ Rules:
 Create or update NEXT_STEPS.md.
 
 Goal:
-Give the next agent a precise pickup point.
+Give the next agent a precise, safe pickup point.
 
 Include:
-- where work stopped
-- immediate task
+- where we left off
+- immediate recommended task
 - success criteria
-- checklist
+- focused checklist
 - do-not-touch list
-- copy-paste prompt
+- suggested copy-paste prompt
 
 Rules:
-- Prefer stability/readability before expansion if the project is fragile.
-- Do not turn next steps into a roadmap.
+- Prefer stability/readability tasks before expansion if the project is fragile.
+- Do not turn the next step into a roadmap.
 ```
+
+---
 
 ## Generalize Project-Specific Rules
 
@@ -54,14 +60,17 @@ Generalize this project-specific instruction into a reusable standard.
 
 Rules:
 - Remove project names.
-- Remove lore, mechanics, and private terms.
-- Keep the workflow rule.
-- Use placeholders where needed.
+- Remove lore/mechanics.
+- Keep the underlying workflow rule.
+- Use placeholders where examples are needed.
+- Keep it usable across future projects.
 
 Output:
 - rewritten generic rule
-- what was removed
+- note what was removed
 ```
+
+---
 
 ## Sync Docs After Implementation
 
@@ -70,13 +79,13 @@ Sync documentation after the recent implementation.
 
 Focus:
 - README if user-facing behavior changed
-- PROJECT_MEMORY if current state changed
-- NEXT_STEPS if pickup changed
+- PROJECT_MEMORY if current implementation state changed
+- NEXT_STEPS if the pickup point changed
 - CHANGELOG if the change is notable
-- design docs if behavior or status changed
+- visual/design hook docs if presentation hooks changed
 
 Rules:
 - Do not add future ideas unless marked planned/deferred.
-- Keep docs concise.
+- Keep the docs concise.
 - Report exactly which docs changed.
 ```

@@ -1,8 +1,10 @@
-# AGENTS.md - [PROJECT_NAME]
+# AGENTS.md — [PROJECT_NAME]
 
-Rules for agents working in this project.
+This file defines how AI agents should work in this project.
 
-## Summary
+---
+
+## Project Summary
 
 [PROJECT_NAME] is [short project description].
 
@@ -12,11 +14,13 @@ Tech stack:
 [LANGUAGE / ENGINE / FRAMEWORK]
 ```
 
-Status:
+Current status:
 
 ```text
 [prototype / active development / stable / archived]
 ```
+
+---
 
 ## Core Rules
 
@@ -24,38 +28,48 @@ Status:
 2. Keep changes small.
 3. Match existing style.
 4. Do not refactor unrelated systems.
-5. Verify changed behavior.
-6. Report boundaries.
+5. Verify the exact behavior changed.
+6. Report what changed and what was not changed.
 
-## Constraints
+---
+
+## Project-Specific Constraints
 
 - [constraint]
 - [constraint]
 - [constraint]
 
-## Folders
+---
+
+## Folder Structure
 
 ```text
-[folder]/  [purpose]
-[folder]/  [purpose]
-[folder]/  [purpose]
+[folder]/        [purpose]
+[folder]/        [purpose]
+[folder]/        [purpose]
 ```
 
-Ask before adding files when placement is unclear.
+When creating a new file, place it in the correct folder. If the folder is unclear, ask.
 
-## Coding Rules
+---
 
-- [language/framework rule]
-- [naming rule]
+## Coding Standards
+
+- [language/framework-specific rule]
+- [naming convention]
 - [state ownership rule]
 - [testing rule]
 
+---
+
 ## Documentation Rules
 
-- Update `PROJECT_MEMORY.md` for notable state changes.
-- Update `NEXT_STEPS.md` when the pickup point changes.
+- Update `PROJECT_MEMORY.md` for notable implementation state changes.
+- Update `NEXT_STEPS.md` when the active handoff point changes.
 - Update `CHANGELOG.md` for notable changes.
-- Separate implemented and planned work.
+- Keep implemented and planned work clearly separated.
+
+---
 
 ## Do Not Touch Without Approval
 
@@ -63,7 +77,11 @@ Ask before adding files when placement is unclear.
 - [risky file]
 - [deferred feature]
 
-## Final Report
+---
+
+## Final Report Format
+
+After edits, report:
 
 ```text
 Changed:
@@ -73,7 +91,7 @@ Verified:
 - [check]: [result]
 
 Not changed:
-- [boundary]
+- [intentional boundary]
 
 Changelog:
 - [updated / not updated and why]
