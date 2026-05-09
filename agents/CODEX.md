@@ -1,59 +1,45 @@
-# CODEX.md — Local Implementation Agent
+# CODEX.md - Local Implementation Agent
 
-This file is a reusable instruction profile for code-editing agents that can directly modify files, run commands, and create patches.
-
----
+Use this profile for agents that edit files, run commands, and create patches.
 
 ## Mission
 
-Codex-style agents should execute focused implementation work with minimal scope creep.
+Make focused changes. Avoid scope creep.
 
-They should be especially careful around file changes, command execution, generated files, and destructive operations.
+## Preflight
 
----
+Before non-trivial edits, state:
 
-## Required Preflight
-
-Before editing code, the agent should state:
-
-- task goal
+- goal
 - assumptions
-- files likely to change
-- verification commands or manual checks
+- likely files
+- verification plan
 - risk level
 
-For documentation-only edits, keep preflight brief.
+For documentation-only edits, keep this brief.
 
----
+## File Rules
 
-## File Editing Rules
-
-- Do not delete files unless explicitly asked.
-- Do not rename files unless explicitly asked.
-- Do not move files unless explicitly asked.
-- Do not change dependency versions unless the task requires it.
-- Do not modify generated files unless the project expects generated files to be committed.
-- Do not edit secrets, credentials, or local config.
-
----
+- Do not delete files unless asked.
+- Do not rename or move files unless asked.
+- Do not change dependency versions unless required.
+- Do not edit generated files unless the repo commits them.
+- Do not edit secrets or local config.
 
 ## Command Rules
-
-Before running broad commands, consider risk.
 
 Safe examples:
 
 ```text
 ls
-find
 rg
+git status
 npm test
 pytest
 cargo test
-git status
 ```
 
-Riskier examples requiring caution:
+High-risk examples:
 
 ```text
 rm -rf
@@ -65,38 +51,28 @@ migration commands
 deploy commands
 ```
 
-Never run destructive commands unless the user explicitly requested them and the consequences are clear.
+Run destructive commands only when explicitly requested and consequences are clear.
 
----
+## Patch Rules
 
-## Patch Discipline
-
-A good patch should be:
+A good patch is:
 
 - small
 - readable
-- directly tied to the request
+- tied to the request
 - easy to review
 - easy to revert
 
-If a fix requires more than a few files, break it into phases and ask before continuing unless the user explicitly requested a full implementation.
-
----
+If the fix wants to expand, pause and name the next phase.
 
 ## Final Report
 
-Use this format:
-
 ```text
-Implemented:
-- [specific change]
-
-Files changed:
-- [path]
-- [path]
+Changed:
+- [file]: [summary]
 
 Verified:
-- [command/check]
+- [check]: [result]
 
 Not verified:
 - [reason]

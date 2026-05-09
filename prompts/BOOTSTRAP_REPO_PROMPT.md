@@ -1,16 +1,11 @@
 # Bootstrap Repo Prompts
 
-Copy-paste prompts for getting a new repo started with an AI coding assistant.
-
----
+Copy-paste prompts for starting or documenting a repo.
 
 ## Empty Documentation Repo
 
 ```text
 Bootstrap this repository as a project-agnostic documentation repo.
-
-Goal:
-Create a clean markdown structure for reusable agent instructions, coding standards, prompt templates, and project setup templates.
 
 Create:
 - README.md
@@ -25,17 +20,14 @@ Rules:
 - Do not add source code.
 - Do not add dependencies.
 - Do not infer a tech stack.
-- Do not add project-specific lore, mechanics, or implementation notes.
-- Keep all docs generic and reusable.
-- Use concise markdown.
+- Do not add project-specific content.
+- Keep docs concise.
 
 Verify:
-- list final file tree
-- confirm no code files were created
+- list final tree
+- confirm no source-code files were created
 - confirm no project-specific content was added
 ```
-
----
 
 ## Empty Code Project
 
@@ -43,44 +35,42 @@ Verify:
 Bootstrap this repository for [TECH_STACK].
 
 Goal:
-Create the smallest working project skeleton that can run locally.
+Create the smallest working project skeleton that runs locally.
 
 Rules:
-- Keep the structure minimal.
+- Keep structure minimal.
 - Do not add optional libraries.
-- Do not add demo features beyond a basic launch/smoke-test screen.
+- Do not add demo features beyond a launch check.
 - Add README.md with setup and run instructions.
-- Add AGENTS.md with project-specific coding rules.
-- Add CHANGELOG.md with an [Unreleased] section.
+- Add AGENTS.md with project-specific rules.
+- Add CHANGELOG.md with [Unreleased].
 
 Verify:
 - run the project if possible
 - list commands used
-- report any missing dependencies or manual setup
+- report missing dependencies or manual setup
 ```
-
----
 
 ## Add Agent Docs to Existing Project
 
 ```text
-Add AI-agent documentation to this existing project.
+Add AI-agent documentation to this project.
 
-Create:
+Create if missing:
 - AGENTS.md
 - PROJECT_MEMORY.md
 - NEXT_STEPS.md
-- CHANGELOG.md if missing
+- CHANGELOG.md
 
 Rules:
 - Do not change source code.
+- Inspect the repo first.
 - Do not invent implementation details.
-- Inspect the repo structure first.
-- Keep unknowns marked as unknown.
-- Use implemented/planned/deferred labels where relevant.
+- Mark unknowns as unknown.
+- Separate implemented, planned, and deferred work.
 
-Verify:
-- list created files
-- summarize what each file contains
-- identify any areas needing human confirmation
+Report:
+- files created or changed
+- what each file is for
+- areas needing human confirmation
 ```

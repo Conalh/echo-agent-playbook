@@ -1,115 +1,65 @@
-# CODING_AGENT.md — General Coding Agent Rules
+# CODING_AGENT.md - General Coding Agent Rules
 
-This file defines reusable behavior for coding agents working on software projects.
+Technology-agnostic rules for software work.
 
-It is intentionally technology-agnostic. Add language, engine, framework, or repo-specific rules in the project-level `AGENTS.md`.
-
----
+Project-level `AGENTS.md` overrides this file.
 
 ## Mission
 
-A coding agent should make the smallest safe change that satisfies the request, explain what changed, and verify the result.
-
-The agent should not use a narrow task as an excuse to redesign the project.
-
----
+Make the smallest safe change that satisfies the request. Verify before claiming success.
 
 ## Before Coding
 
-For any non-trivial task, state:
+For non-trivial work, state:
 
 ```text
 Goal:
-What I understand the task to be.
+[what will change]
 
 Plan:
-1. [Step] -> verify: [check]
-2. [Step] -> verify: [check]
-3. [Step] -> verify: [check]
+1. [step] -> verify: [check]
+2. [step] -> verify: [check]
 
 Success:
-What will be true when this is done.
+[observable result]
 ```
 
-If the task is ambiguous, ask a focused question or provide conservative assumptions.
+Ask only when a wrong assumption would waste time or risk damage.
 
----
+## Rules
 
-## Coding Standards
-
-### Keep Scope Tight
-
-- Touch only what the request requires.
-- Do not refactor adjacent code unless asked.
-- Do not add speculative extension points.
-- Do not create new systems for one-off behavior.
-- Do not rewrite working code to match personal preference.
-
-### Prefer Simple Code
-
-- Use straightforward control flow.
-- Keep functions focused.
-- Avoid cleverness.
-- Avoid abstraction until duplication proves it is real.
-- Do not add configuration before there is a real configuration need.
-
-### Match the Project
-
-- Match existing naming.
-- Match existing file layout.
-- Match existing formatting.
-- Match existing architecture.
-- Follow project-specific docs over this generic file.
-
-### Preserve Data and State
-
-Be careful with:
-
-- save files
-- migrations
-- database changes
-- user data
-- generated assets
-- project settings
-- dependency updates
-
-When in doubt, stop and ask.
-
----
+- Keep scope tight.
+- Match existing naming, layout, and style.
+- Prefer simple control flow.
+- Avoid speculative abstractions.
+- Preserve user data, settings, migrations, and generated assets.
+- Do not rewrite working code for preference.
 
 ## Verification
 
-Run the narrowest useful verification available.
+Run the narrowest useful check:
 
-Examples:
+- unit test
+- type check
+- lint
+- build
+- launch check
+- manual reproduction
 
-- unit tests for changed code
-- type checks
-- lint checks
-- build command
-- launch smoke test
-- manual reproduction checklist
+If a check cannot run, say why and list manual checks.
 
-If verification cannot be run, say so directly and explain what should be checked manually.
-
----
-
-## Final Report Format
-
-After implementation, report:
+## Final Report
 
 ```text
 Changed:
-- [file]: [what changed]
+- [file]: [summary]
 
 Verified:
-- [command/check]: [result]
+- [check]: [result]
 
 Not changed:
-- [thing intentionally left alone]
+- [intentional boundary]
 
 Notes:
-- [risk, follow-up, or limitation]
+- [risk or follow-up]
 ```
-
-Keep the report factual. Do not overstate certainty.

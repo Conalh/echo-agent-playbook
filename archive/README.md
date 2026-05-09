@@ -1,17 +1,17 @@
 # Archive
 
-Older versions of reusable docs can live here when they may still be useful later.
+Store old reusable docs here when they still have reference value.
 
-Use this folder for:
+Use for:
 
-- old agent instruction versions
-- older prompt versions
+- old agent instructions
+- old prompt versions
 - replaced standards
 - historical reference docs
 
-Do not store project-specific design bibles here unless they are clearly marked as examples and stripped of private or sensitive content.
+Do not store project-specific design docs unless they are stripped of private details and clearly marked as examples.
 
-When archiving a file, prefer a short note:
+When archiving, include:
 
 ```text
 Archived because: [reason]

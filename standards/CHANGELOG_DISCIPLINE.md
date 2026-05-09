@@ -1,83 +1,64 @@
 # Changelog Discipline
 
-A changelog records notable changes so future maintainers can understand project movement without reading every commit.
+A changelog records notable movement without making future readers inspect every commit.
 
----
+## Format
 
-## Recommended Format
-
-Use an `[Unreleased]` section until the project has formal versions.
+Use `[Unreleased]` until the project has versions.
 
 ```md
 # Changelog
 
-All notable changes to this project will be documented here.
-
 ## [Unreleased]
 
 ### Added
-- New features or new documents.
+- New files or features.
 
 ### Changed
-- Behavior changes, structure changes, major wording changes.
+- Behavior, structure, or workflow changes.
 
 ### Fixed
-- Bug fixes or corrected broken behavior.
+- Corrected broken behavior or wrong docs.
 
 ### Removed
-- Deleted features or files.
+- Deleted files, features, or workflows.
 
 ### Notes
-- Context, documentation syncs, known caveats.
+- Context or caveats.
 ```
 
----
-
-## What Belongs in the Changelog
-
-Add entries for:
+## Add Entries For
 
 - new features
 - new systems
 - new documents
 - changed workflows
-- important bug fixes
+- important fixes
 - major documentation syncs
-- significant UI/presentation changes
-- changes that future agents need to know happened
+- changes future agents need to know
 
----
-
-## What Does Not Need a Changelog Entry
-
-Usually skip entries for:
+## Skip Entries For
 
 - typo fixes
 - formatting-only edits
 - comment-only edits
-- small wording cleanup
-- trivial file organization
-- experiments that are not committed or preserved
+- small wording cuts
+- uncommitted experiments
 
----
-
-## Good Entry Examples
+## Good Entries
 
 ```md
 ### Added
 - Added `PROJECT_MEMORY.md` template for current-state handoffs.
-- Added regression-test prompt templates for coding agents.
 
 ### Changed
 - Reorganized agent instructions into `agents/`, `standards/`, and `prompts/`.
 
 ### Fixed
-- Corrected README folder map to match the actual repo structure.
+- Corrected README folder map.
 ```
 
----
-
-## Bad Entry Examples
+## Bad Entries
 
 ```md
 - updated stuff
@@ -85,22 +66,16 @@ Usually skip entries for:
 - changed docs
 ```
 
-A changelog entry should say what changed.
-
----
-
 ## Agent Rule
 
-After notable implementation work, the agent should say whether the changelog was updated.
-
-Example:
+After notable work, report changelog status:
 
 ```text
-CHANGELOG.md was updated under [Unreleased] -> Added.
+CHANGELOG.md updated under [Unreleased] -> Changed.
 ```
 
 Or:
 
 ```text
-CHANGELOG.md was not updated because this was an inspection-only task.
+CHANGELOG.md not updated because this was inspection-only.
 ```

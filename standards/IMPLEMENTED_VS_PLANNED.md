@@ -1,91 +1,67 @@
 # Implemented vs Planned
 
-A reusable standard for keeping project documentation honest.
+Keep docs honest about what exists.
 
----
+## Problem
 
-## The Problem
+AI-assisted projects often describe future ideas in the same tone as live features.
 
-AI-assisted projects often accumulate documents that describe future ideas in the same tone as live features.
+Future agents then build on false assumptions.
 
-That creates confusion.
+## Labels
 
-Future agents may read a planned system as implemented and build on a false assumption.
-
----
-
-## Required Labels
-
-Use these labels consistently:
+Use:
 
 ```text
-Implemented      Exists and works in the current project.
-Partial          Exists, but only part of the intended behavior is live.
-Prototype        Exists in a test scene, lab, branch, or isolated demo.
-Planned          Intended future work, not live.
-Deferred         Intentionally postponed.
-Removed          Previously existed, now gone.
-Unknown          Status needs verification.
+Implemented  Exists and works now.
+Partial      Exists, but not fully.
+Prototype    Exists only in an isolated demo, branch, or test.
+Planned      Intended future work.
+Deferred     Intentionally postponed.
+Removed      Previously existed, now gone.
+Unknown      Needs verification.
 ```
-
----
 
 ## Good Example
 
 ```md
-## Reward Panel
+## CSV Export
 
 Status: Partial.
 
 Implemented:
-- Opens after one route node.
-- Lets the player choose one of three rewards.
-- Prevents duplicate claims.
+- Exports the current table.
+- Preserves visible filters.
+- Downloads a CSV file.
 
 Deferred:
-- Reward rarity weighting.
-- Reward history UI.
-- Procedural reward placement.
+- Scheduled exports.
+- Custom column presets.
+- Export history.
 ```
-
----
 
 ## Bad Example
 
 ```md
-## Reward Panel
+## CSV Export
 
-The reward system gives players route rewards, weighted by rarity, with special event variants and reward history.
+The export system supports scheduled exports, custom columns, history, and filtered downloads.
 ```
 
-If only one test reward exists, this is misleading.
-
----
+If only filtered downloads exist, this is false.
 
 ## Agent Rule
 
-When writing or updating docs, an agent should ask:
+Ask:
 
 ```text
-Would a new contributor know what is real right now?
+Would a new contributor know what is real now?
 ```
 
-If not, split the section into `Implemented` and `Planned`.
+If not, split the section into implemented and planned work.
 
----
+## Design Docs
 
-## Design Docs Are Allowed to Dream
+Design docs may include future ideas.
 
-Design documents can contain future ideas.
-
-They just need labels.
-
-A good design doc can say:
-
-```md
-This is the emotional target.
-Current implementation only covers the first-pass version.
-The deeper version is deferred.
-```
-
-That preserves ambition without confusing implementation.
+They still need status labels.

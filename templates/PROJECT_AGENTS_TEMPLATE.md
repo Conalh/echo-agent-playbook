@@ -1,10 +1,8 @@
-# AGENTS.md — [PROJECT_NAME]
+# AGENTS.md - [PROJECT_NAME]
 
-This file defines how AI agents should work in this project.
+Rules for agents working in this project.
 
----
-
-## Project Summary
+## Summary
 
 [PROJECT_NAME] is [short project description].
 
@@ -14,13 +12,11 @@ Tech stack:
 [LANGUAGE / ENGINE / FRAMEWORK]
 ```
 
-Current status:
+Status:
 
 ```text
 [prototype / active development / stable / archived]
 ```
-
----
 
 ## Core Rules
 
@@ -28,48 +24,38 @@ Current status:
 2. Keep changes small.
 3. Match existing style.
 4. Do not refactor unrelated systems.
-5. Verify the exact behavior changed.
-6. Report what changed and what was not changed.
+5. Verify changed behavior.
+6. Report boundaries.
 
----
-
-## Project-Specific Constraints
+## Constraints
 
 - [constraint]
 - [constraint]
 - [constraint]
 
----
-
-## Folder Structure
+## Folders
 
 ```text
-[folder]/        [purpose]
-[folder]/        [purpose]
-[folder]/        [purpose]
+[folder]/  [purpose]
+[folder]/  [purpose]
+[folder]/  [purpose]
 ```
 
-When creating a new file, place it in the correct folder. If the folder is unclear, ask.
+Ask before adding files when placement is unclear.
 
----
+## Coding Rules
 
-## Coding Standards
-
-- [language/framework-specific rule]
-- [naming convention]
+- [language/framework rule]
+- [naming rule]
 - [state ownership rule]
 - [testing rule]
 
----
-
 ## Documentation Rules
 
-- Update `PROJECT_MEMORY.md` for notable implementation state changes.
-- Update `NEXT_STEPS.md` when the active handoff point changes.
+- Update `PROJECT_MEMORY.md` for notable state changes.
+- Update `NEXT_STEPS.md` when the pickup point changes.
 - Update `CHANGELOG.md` for notable changes.
-- Keep implemented and planned work clearly separated.
-
----
+- Separate implemented and planned work.
 
 ## Do Not Touch Without Approval
 
@@ -77,11 +63,7 @@ When creating a new file, place it in the correct folder. If the folder is uncle
 - [risky file]
 - [deferred feature]
 
----
-
-## Final Report Format
-
-After edits, report:
+## Final Report
 
 ```text
 Changed:
@@ -91,7 +73,7 @@ Verified:
 - [check]: [result]
 
 Not changed:
-- [intentional boundary]
+- [boundary]
 
 Changelog:
 - [updated / not updated and why]

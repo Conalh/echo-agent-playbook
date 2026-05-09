@@ -1,67 +1,47 @@
 # Git Workflow
 
-General Git workflow rules for small AI-assisted projects.
+Rules for small AI-assisted projects.
 
----
+## Commits
 
-## Commit Philosophy
+Prefer small commits with one clear intent.
 
-Prefer small commits with clear intent.
-
-A good commit should answer:
+A commit should answer:
 
 ```text
 What changed?
 Why did it change?
 ```
 
-Avoid giant commits that mix implementation, refactors, docs, and experiments.
-
----
-
-## Commit Message Format
-
-Use simple imperative messages:
+Use imperative messages:
 
 ```text
-Add coding guardrails document
+Add coding guardrails
 Update project memory template
 Fix README folder map
 Refine bootstrap prompt
 ```
 
-For larger changes:
-
-```text
-Add agent playbook starter docs
-```
-
-Optional body:
+For larger commits, add a short body:
 
 ```text
 - Adds reusable agent instructions
-- Adds coding and documentation standards
-- Adds prompt and project setup templates
+- Adds documentation standards
+- Adds prompt templates
 ```
 
----
+## Branches
 
-## Branching
-
-For solo projects, simple branches are enough.
-
-Examples:
+Use simple names:
 
 ```text
 main
-feature/reward-panel
-fix/save-load-crash
 docs/agent-playbook
+feature/import-validation
+fix/startup-crash
 ```
 
-Use branches when work may take more than one sitting or might need rollback.
-
----
+Use a branch when work spans sessions or needs rollback.
 
 ## Before Committing
 
@@ -70,15 +50,13 @@ Check:
 - `git status`
 - changed files are expected
 - no secrets are included
-- generated junk is not included
+- generated junk is excluded
 - docs match the change
-- tests/checks were run when relevant
+- relevant checks ran
 
----
+## Watch Files
 
-## Files to Watch For
-
-Be careful before committing:
+Be careful with:
 
 ```text
 .env
@@ -93,11 +71,7 @@ local settings files
 large generated media
 ```
 
-Add a `.gitignore` when the project has known generated files.
-
----
-
-## AI Agent Git Rules
+## Agent Rules
 
 An agent should not:
 
@@ -106,6 +80,6 @@ An agent should not:
 - reset hard
 - delete branches
 - rewrite history
-- modify `.gitignore` broadly without explaining why
+- broaden `.gitignore` without reason
 
-An agent may prepare a commit summary if asked.
+An agent may prepare a commit summary when asked.

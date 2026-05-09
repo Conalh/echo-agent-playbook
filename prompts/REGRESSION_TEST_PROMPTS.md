@@ -1,37 +1,33 @@
 # Regression Test Prompts
 
-Prompts for checking that recent changes did not break the core loop.
+Prompts for checking that recent changes did not break the core path.
 
----
-
-## General Regression Smoke Test
+## General Smoke Test
 
 ```text
-Run a regression/smoke test after the recent changes.
+Run a regression smoke test after the recent changes.
 
 Goal:
-Verify the current implemented loop before adding new features.
+Verify the implemented loop before adding features.
 
 Focus:
 - project launches cleanly
-- main workflow still completes
+- main workflow completes
 - recent feature works
 - adjacent systems still work
 - settings/persistence still work if relevant
 - fallback path still works if one exists
 - no obvious runtime errors
-- no data/math regression
+- no data regression
 
 Rules:
 - Report failures first.
 - Do not add features.
 - Do not refactor.
-- Fix only launch/runtime blockers if explicitly asked.
+- Fix launch/runtime blockers only if asked.
 ```
 
----
-
-## Feature Regression Test
+## Feature Regression
 
 ```text
 Regression-test [FEATURE_NAME].
@@ -39,10 +35,10 @@ Regression-test [FEATURE_NAME].
 Focus:
 - normal path
 - edge path
-- cancellation/close path
+- cancel/close path
 - repeated-use path
-- adjacent feature interaction
-- persistence/state reset if relevant
+- adjacent interactions
+- persistence or reset, if relevant
 
 Report:
 - passed checks
@@ -53,39 +49,35 @@ Report:
 Do not implement fixes unless asked.
 ```
 
----
-
-## UI Regression Test
+## UI Regression
 
 ```text
-Smoke-test the UI after recent layout/presentation changes.
+Smoke-test the UI after recent layout or presentation changes.
 
 Focus:
 - panels open and close
-- buttons still work
-- input is not blocked accidentally
+- buttons work
+- input is not blocked
 - important text is readable
 - overlays layer correctly
-- settings/pause/confirm dialogs still appear above gameplay UI
-- no major layout overlap at common window sizes
+- settings and confirmation dialogs appear above base UI
+- no major layout overlap at common sizes
 
 Do not redesign the UI during this test.
 ```
 
----
-
-## Documentation Regression Test
+## Documentation Regression
 
 ```text
-Check whether the documentation still matches the current project state.
+Check whether documentation matches current project state.
 
 Focus:
 - README overview is accurate
-- AGENTS instructions are still valid
+- AGENTS instructions are valid
 - current-state docs match implemented features
-- NEXT_STEPS points to the actual next task
+- NEXT_STEPS points to the next real task
 - CHANGELOG includes notable recent changes
 - planned/deferred work is not described as live
 
-Do not edit yet. Report mismatches first.
+Do not edit. Report mismatches first.
 ```

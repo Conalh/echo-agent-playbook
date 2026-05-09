@@ -1,47 +1,41 @@
 # Image Generation Prompts
 
-Reusable prompt patterns and preferences for image-generation tasks.
+Reusable prompt patterns for image tasks.
 
----
+## Default
 
-## Default Preference
+Generate one strong image unless variants are requested.
 
-Unless multiple variants are explicitly requested, generate one strong image.
+Do not generate extras just to solve cropping.
 
-The user may personally crop, frame, or adjust the result afterward. Do not generate extra versions only to solve cropping unless asked.
-
----
-
-## Single Image Prompt Pattern
+## Single Image
 
 ```text
 Generate one image of [SUBJECT].
 
 Style:
-[style / mood / medium]
+[medium / mood / reference style]
 
 Composition:
-[main framing, camera angle, major objects]
+[framing, angle, key objects]
 
 Lighting:
-[lighting direction, intensity, color mood]
+[direction, intensity, color mood]
 
 Constraints:
 - one image only
 - no text unless requested
-- leave enough margin for cropping if useful
-- prioritize strong silhouette and readable composition
+- leave crop margin if useful
+- prioritize readable silhouette
 ```
 
----
-
-## Game Asset Prompt Pattern
+## Visual Asset
 
 ```text
-Generate one game-ready concept image for [ASSET].
+Generate one concept image for [ASSET].
 
 Purpose:
-[card art / character portrait / environment concept / item icon / UI background]
+[illustration / portrait / environment / item icon / UI background]
 
 Visual identity:
 [themes, motifs, materials]
@@ -59,9 +53,7 @@ Constraints:
 - no logos or text unless requested
 ```
 
----
-
-## Iteration Prompt
+## Iteration
 
 ```text
 Revise the previous image.
@@ -78,8 +70,6 @@ Avoid:
 Generate one image only.
 ```
 
----
+## Likeness
 
-## Likeness Rule
-
-If the image should include the user or a real person, request a reference image first unless one is already provided in the current conversation.
+For real-person likeness, request a reference image unless one is already provided.

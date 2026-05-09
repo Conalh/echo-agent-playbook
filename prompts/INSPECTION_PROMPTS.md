@@ -1,8 +1,6 @@
 # Inspection Prompts
 
-Use these when you want a report, not implementation.
-
----
+Use these when the user wants a report, not implementation.
 
 ## Codebase Inspection
 
@@ -10,23 +8,20 @@ Use these when you want a report, not implementation.
 Inspect the codebase for [TOPIC].
 
 Goal:
-Understand the current implementation before making changes.
+Understand current implementation before changes.
 
 Focus:
-- where the behavior is implemented
-- what owns the state
-- likely extension points
+- where behavior lives
+- what owns state
+- extension points
 - risks
-- files that would probably need changes
+- files likely to change
 
 Rules:
-- Do not edit files.
-- Do not implement anything.
-- Report findings only.
+- Do not edit.
 - Separate confirmed facts from assumptions.
+- Report findings only.
 ```
-
----
 
 ## Documentation Inspection
 
@@ -36,17 +31,15 @@ Inspect the documentation for consistency.
 Focus:
 - source-of-truth conflicts
 - stale implementation claims
-- planned features described as implemented
+- planned work described as implemented
 - missing current-state notes
-- missing next-step handoff
+- missing handoff
 
 Rules:
-- Do not edit yet.
-- Quote or reference specific files/sections.
+- Do not edit.
+- Reference specific files or sections.
 - Recommend exact cleanup steps.
 ```
-
----
 
 ## Architecture Risk Inspection
 
@@ -59,15 +52,13 @@ Focus:
 - duplicate logic
 - hidden dependencies
 - unclear naming
-- high-risk extension points
+- risky extension points
 
 Rules:
 - Do not refactor.
-- Do not propose a full rewrite unless absolutely necessary.
-- Prefer smallest safe improvements.
+- Do not propose a rewrite unless necessary.
+- Prefer the smallest safe improvement.
 ```
-
----
 
 ## Readability Inspection
 
@@ -75,7 +66,7 @@ Rules:
 Inspect [FEATURE/UI/SYSTEM] for readability.
 
 Goal:
-Identify what would confuse a user or future maintainer.
+Find what would confuse a user or maintainer.
 
 Focus:
 - unclear labels
@@ -88,5 +79,5 @@ Focus:
 Rules:
 - Report failures first.
 - Separate must-fix from nice-to-have.
-- Do not implement changes yet.
+- Do not implement changes.
 ```

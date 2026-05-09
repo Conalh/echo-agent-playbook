@@ -1,20 +1,20 @@
 # [PROJECT_NAME]
 
-[One-sentence description of the project.]
+[One-sentence project description.]
 
 ## Status
 
 Current status: [prototype / active development / stable / archived]
 
-This project is [briefly describe maturity and intended use].
+[Brief maturity note.]
 
-## What It Does
+## Does
 
 - [core behavior]
 - [core behavior]
 - [core behavior]
 
-## Current Scope
+## Scope
 
 Implemented:
 
@@ -44,18 +44,17 @@ Planned / Deferred:
 [test command]
 ```
 
-## Documentation Map
+## Docs
 
 ```text
-AGENTS.md          Agent and coding instructions.
-PROJECT_MEMORY.md  Current implementation state.
-NEXT_STEPS.md      Current handoff point.
+AGENTS.md          Agent and coding rules.
+PROJECT_MEMORY.md  Current state.
+NEXT_STEPS.md      Active pickup.
 CHANGELOG.md       Notable changes.
 ```
 
-## Notes for Future Agents
+## Agent Notes
 
-- Keep changes small.
 - Read `AGENTS.md` before editing.
-- Check `PROJECT_MEMORY.md` for current state.
-- Use `NEXT_STEPS.md` for the active pickup point.
+- Check `PROJECT_MEMORY.md` before assuming state.
+- Use `NEXT_STEPS.md` for the next task.

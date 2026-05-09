@@ -1,14 +1,12 @@
 # Verification and Smoke Tests
 
-Reusable standards for checking AI-assisted changes.
+Verification proves the changed path before success is claimed.
 
----
-
-## Verification Levels
+## Levels
 
 ### 1. Static Check
 
-Use when checking structure or syntax.
+Use for structure or syntax.
 
 Examples:
 
@@ -20,7 +18,7 @@ Examples:
 
 ### 2. Unit Check
 
-Use when behavior has isolated tests.
+Use for isolated behavior.
 
 Examples:
 
@@ -35,70 +33,59 @@ Use when systems interact.
 Examples:
 
 - start app
-- complete a workflow
-- verify a UI panel opens
-- verify state changes across screens
+- complete workflow
+- verify state change
+- verify UI opens or closes
 
 ### 4. Regression Smoke Test
 
-Use after several systems changed or when the app has become fragile.
+Use after broad or risky changes.
 
-A smoke test checks the core loop without trying to test every edge case.
-
----
+Smoke tests check the core loop, not every edge case.
 
 ## Smoke Test Template
 
 ```md
-# Smoke Test — [DATE / FEATURE]
+# Smoke Test - [DATE / FEATURE]
 
 Goal:
-Verify the current implemented loop before adding new mechanics.
+Verify the implemented loop before adding new behavior.
 
 Focus:
 - app launches cleanly
 - main workflow still works
 - recent feature still works
-- adjacent systems were not broken
-- settings/persistence still work if relevant
+- adjacent systems still work
+- settings or persistence still work, if relevant
 - no obvious runtime errors
-- rollback path still works if one exists
 
 Report failures first.
-Do not add new features during this pass.
+Do not add features during this pass.
 ```
 
----
-
-## Regression Prompt Pattern
+## Regression Prompt
 
 ```text
-Run a live regression/smoke test after the recent [FEATURE/SYSTEM] changes.
+Run a regression smoke test after the recent [FEATURE/SYSTEM] changes.
 
 Goal:
-Verify the implemented loop before adding mechanics.
+Verify the implemented loop before adding new behavior.
 
 Focus:
 - [critical path]
 - [recent feature]
 - [adjacent feature]
 - [settings/persistence]
-- [fallback/rollback]
-- [no math/data regression]
+- [fallback path]
 
 Report failures first.
-Do not add mechanics.
+Do not implement features.
 ```
 
----
-
-## Agent Verification Report
-
-Use:
+## Report Format
 
 ```text
 Verified:
-- [check]: passed
 - [check]: passed
 
 Failed:
@@ -108,20 +95,8 @@ Not verified:
 - [check]: [why]
 ```
 
-Do not hide failed checks under a general success summary.
+Do not hide failed checks under a success summary.
 
----
+## If Checks Cannot Run
 
-## When Verification Cannot Be Run
-
-Say so directly.
-
-Example:
-
-```text
-I could not run the app in this environment. Manual checks needed:
-- Launch the app.
-- Open Settings.
-- Complete one normal workflow.
-- Confirm the changed panel appears once.
-```
+Say so directly and list manual checks.

@@ -1,63 +1,46 @@
 # Coding Guardrails
 
-Reusable coding principles for AI-assisted development.
+Rules that prevent common AI coding failures: guessing, overbuilding, broad refactors, and false success claims.
 
-These rules are meant to prevent the common failure modes of coding agents: overbuilding, guessing, refactoring too much, and failing to verify.
-
----
-
-## 1. Think Before Coding
-
-Do not jump straight into edits.
+## 1. Think First
 
 Before implementation, identify:
 
-- the goal
-- the assumptions
-- the affected files or systems
-- the simplest approach
-- the verification plan
+- goal
+- assumptions
+- affected files or systems
+- simplest approach
+- verification plan
 
-If the task is ambiguous, surface the ambiguity.
+If a simpler path exists, name it before building.
 
-If there is a simpler approach than the user's implied approach, say so before building.
+## 2. Prefer Simple Code
 
----
-
-## 2. Simplicity First
-
-Write the minimum code that solves the current problem.
-
-Prefer:
+Use:
 
 - clear functions
 - direct data flow
 - local fixes
 - existing patterns
-- boring readable code
+- readable control flow
 
 Avoid:
 
 - speculative architecture
-- framework-like abstractions for one feature
+- generic helpers for one use
 - unused configuration
-- clever generic helpers
-- premature optimization
+- cleverness
 - defensive code for impossible states
 
-The test:
+Test:
 
 ```text
-Would a senior maintainer call this overcomplicated?
+Would a maintainer call this overcomplicated?
 ```
 
 If yes, simplify.
 
----
-
-## 3. Surgical Changes
-
-Touch only what the request requires.
+## 3. Keep Scope Surgical
 
 Do not:
 
@@ -65,93 +48,73 @@ Do not:
 - rename unrelated variables
 - change file layout
 - rewrite working code
-- clean up unrelated style issues
+- clean unrelated style
 - delete unused code without approval
 
-If unrelated cleanup is worth doing, mention it as a follow-up.
+Mention worthy cleanup as follow-up.
 
----
+## 4. Define Success
 
-## 4. Goal-Driven Execution
-
-For multi-step tasks, define success before writing code.
-
-Example:
+Generic example:
 
 ```text
 Goal:
-Add a one-time reward panel after a completed route node.
+Add confirmation before deleting an item.
 
 Success:
-The panel appears once, grants the selected reward, cannot be claimed twice, and does not affect unrelated route nodes.
+The confirmation opens, cancel leaves data unchanged, confirm deletes once, and unrelated actions still work.
 
 Plan:
-1. Add reward state -> verify node can be marked claimed.
-2. Show panel from route completion -> verify it appears after success.
-3. Add claim guard -> verify repeated visits do not duplicate rewards.
+1. Add confirmation state -> verify prompt opens.
+2. Wire confirm/cancel -> verify both paths.
+3. Check adjacent actions -> verify no regression.
 ```
 
----
+## 5. Match Architecture
 
-## 5. Match Existing Architecture
+Follow existing:
 
-The best implementation usually looks like it was already part of the project.
+- naming
+- file placement
+- control flow
+- data ownership
+- test style
 
-Follow:
+Do not introduce a new style casually.
 
-- existing naming
-- existing file placement
-- existing control flow
-- existing data ownership
-- existing test style
-
-Do not introduce a new architectural style casually.
-
----
-
-## 6. Keep Data Ownership Clear
-
-Know which object owns the state.
-
-Avoid scattering state across UI nodes, helper classes, and global singletons unless the project already uses that model.
+## 6. Keep Ownership Clear
 
 General rule:
 
 ```text
 Core systems own state.
-UI displays state and emits user intent.
+UI displays state and emits intent.
 Parent systems coordinate children.
 ```
 
----
+Avoid scattering one state across views, helpers, and globals unless the project already works that way.
 
-## 7. Do Not Hide Mechanics in Presentation
+## 7. Keep Rules Out of Presentation
 
-Presentation code should not secretly own gameplay rules.
+Presentation code should not secretly own business rules.
 
-If visual behavior affects logic, it should be explicit and documented.
+If visual behavior affects logic, make the logic explicit.
 
----
+## 8. Verify the Narrow Path
 
-## 8. Verify the Narrow Path First
-
-After coding, verify the exact behavior that changed before testing broad scenarios.
+First verify the changed behavior.
 
 Then verify likely regressions.
 
----
+## 9. Report Boundaries
 
-## 9. Report What Was Not Done
-
-A useful implementation report includes boundaries.
+State what was not changed.
 
 Example:
 
 ```text
 Not changed:
-- Did not alter scoring math.
-- Did not add new reward types.
-- Did not refactor the route graph.
+- Did not alter authorization rules.
+- Did not change the data model.
+- Did not refactor adjacent screens.
 ```
-
-This prevents false assumptions and keeps future work cleaner.
